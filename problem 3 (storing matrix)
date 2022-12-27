@@ -1,0 +1,112 @@
+#include<iostream>
+using namespace std;
+class Matrix
+{
+public:
+  int a1[10][10],a2[10][10],c[10][10],sum,a[10][10],s[10][10],m[10][10],i,j,k,n,d,transpose[50][50],flag;
+  void getdata();
+  void checktriangle();
+  void sumdiagonal();
+  void matrixoperations();
+  void transpose1();
+};
+void Matrix::sumdiagonal()
+{
+
+  int sum_left =0, sum_right = 0;
+  cout << "Enter elements into the matrix \n";
+
+  
+  for(int i=0; i<n; i++){
+    for(int j=0; j<i; j++){
+      cin >> a1[i][j];
+      if(i==j)
+        sum_left += a1[i][j];
+      if((i+j) == n-1)
+        sum_right += a1[i][j];
+    }
+}
+}
+void Matrix::checktriangle()
+{
+ 
+	for (i = 1; i < n; i++){
+	for (j = 0; j < i; j++){
+		if (a1[i][j] != 0)
+			flag = 0;
+		else
+			flag = 1;
+			}
+			}
+
+	if (flag == 1){
+	cout<<"upper Triangular";
+	
+	}else{
+	cout<<"Not an Upper Triangular Matrix";
+}
+}
+void Matrix::matrixoperations()
+{
+ for(i = 0; i < n; ++i){
+        for(j = 0; j < i; ++j)
+        {
+       // sum[i][j] = a1[i][j]+a2[i][j];
+        }
+        }
+}
+void Matrix::transpose1()
+{
+for (int i = 0; i < n; ++i){
+      for (int j = 0; j < i; ++j) {
+         transpose[j][i] = a1[i][j];
+      }
+      }
+   for (int i = 0; i < n; ++i) {
+      for (int j = 0; j < i; ++j) {
+         cout << " " << a1[i][j];
+}
+}
+}
+void Matrix::getdata()
+{  
+cout<<"enter the size of square martix(n*n)";
+cin>>n;
+cout<<"enter the elements of matrix 1";
+for(i=0;i<n;i++)
+{    
+for(j=0;j<n;j++){
+         cin>>a1[i][j];
+         }
+         }
+     cout<<"enter the elements of matrix 2";
+    for(i=0;i<n;i++)
+    {    for(j=0;j<n;j++){
+            cin>>a2[i][j];
+            }
+     }
+     }
+int main()
+{
+int x;
+Matrix b;
+b.getdata();
+cout<<"Enter choice of operation"<<"\n 1. Check if Triangular matrix"<<"\n 2. Find the sum of diagonal elements"<<"\n 3. Transpose"<<"\n 4. Add Matrix";
+cin>>x;
+switch(x){
+case 1:
+b.checktriangle();
+break;	
+case 2:
+b.sumdiagonal();
+break;
+case 3:
+b.transpose1();
+break;	
+case 4:
+b.matrixoperations();
+break;
+}
+return 0;
+}
+
