@@ -1,0 +1,88 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+ int x,y,z,i,f,j,k=0, a[100],b[100],c[100],m[100];
+     cout<<"\nenter total no. of students\n";
+     cin>>x;
+     for(i=0;i<x;i++)
+     {     m[i]=i+1;
+     }
+     cout<<"enter total no. of students who play cricket\n";
+     cin>>y;
+     cout<<"\n enter rollno who play cricket\n";
+     for(i=0;i<y;i++)
+     {   cin>>a[i];  }
+       cout<<"enter total no.  who play badminton\n";
+     cin>>z;
+     cout<<"\n enter rollno.s who play badminton\n";
+     for(i=0;i<z;i++)
+     {   cin>>b[i];  }
+
+     cout<<"player which play either cricket or badminton\n";
+
+     for(i=0;i<y;i++)
+     {    c[k]=a[i];
+       k++;
+      }
+      for(i=0;i<z;i++)
+      {
+         f=0;
+         for(j=0;j<y;j++)
+         {    if(b[i]==a[j])
+              {
+              f=1;
+               }
+         }
+         if(f==0)
+         {
+         c[k]=b[i];
+          k++;
+           }
+       }
+       for(i=0;i<k;i++)
+       cout<<" "<<c[i];
+       cout<<"\nrollno. who only play cricket\n";
+       for(i=0;i<y;i++)
+       {  f=0;
+      for(j=0;j<z;j++)
+       {    if(a[i]==b[j])
+        { f=1;   }
+        }
+        if(f==0)
+        {
+        cout<<"      "<<a[i];
+        }
+       }
+    cout<<"\nrollno. who only play badminton\n";
+       for(i=0;i<z;i++)
+       {  f=0;
+       for(j=0;j<y;j++)
+       {    if(b[i]==a[j])
+        { f=1;   }
+        }
+        if(f==0)
+        { cout<<"      "<<b[i];
+         }
+       }
+
+       cout<<"\nrollno. who play both games\n";
+       for(i=0;i<y;i++)
+       {  for(j=0;j<z;j++)
+       {    if(a[i]==b[j])
+        {  cout<<"     "<<a[i];   }
+        }
+       }
+       cout<<"\nrollno. who neither play cricket nor badminton\n";
+       for(i=0;i<x;i++)
+       {  f=0;
+      for(j=0;j<k;j++)
+       {    if(m[i]==c[j])
+        { f=1;   }
+        }
+        if(f==0)
+        { cout<<"      "<<m[i]; }
+       }
+  return 0;
+
+}
